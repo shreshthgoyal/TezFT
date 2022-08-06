@@ -4,9 +4,30 @@ import Navigation from './components/Navigation';
 import Landing from './components/Landing';
 import Service from './components/Service';
 import Trend from './components/Trend';
-import Steps from './components/Steps';
+// import Steps from './components/Steps';
+import { connectWallet, getAccount } from './utils/wallet';
+import { useEffect, useState } from 'react';
 
 function App() {
+
+  const [activeAccount, setActiveAccount] = useState()
+
+  const handleWallet = async () => {
+    console.log("click");
+    await connectWallet();
+    const activeAccount = await getAccount();
+    setActiveAccount(activeAccount);
+  }
+
+ useEffect( () => {
+  async function fetchAccount() {
+    const account = await getAccount();
+    setActiveAccount(account);
+  }
+
+  fetchAccount()
+  
+ }, [])
   return (
     <div className="app">
     <header className="app-header">
@@ -24,9 +45,10 @@ function App() {
           <button className="icon-button large">
             <i className="ph-magnifying-glass"></i>
           </button>
-          <button className="icon-button large">
+          {activeAccount ? <span>{activeAccount}</span> : <button className="icon-button large" onClick={handleWallet}>
             <i className="ph-wallet"></i>
-          </button>
+          </button>}
+          
         </div>
       </div>
       <div className="app-header-mobile">
