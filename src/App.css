@@ -17,6 +17,10 @@
   --c-text-tertiary: var(--c-gray-500);
 }
 
+#enable {
+  color: green;
+}
+
 body {
   line-height: 1.5;
   min-height: 100vh;

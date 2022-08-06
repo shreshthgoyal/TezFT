@@ -8,10 +8,13 @@ import Trend from './components/Trend';
 import { connectWallet, getAccount } from './utils/wallet';
 import { useEffect, useState } from 'react';
 
+function truncate(str){
+  return str.slice(0, 3) + '...' + str.slice(str.length-3, str.length) ;
+};
+
 function App() {
-
   const [activeAccount, setActiveAccount] = useState()
-
+  let address;
   const handleWallet = async () => {
     console.log("click");
     await connectWallet();
@@ -36,18 +39,18 @@ function App() {
       </div>
       <div className="app-header-actions">
         <button className="user-profile">
-          <span>Matheo Peterson</span>
+          <span>{activeAccount ? truncate(activeAccount)  : "Connect to Wallet"}</span>
           <span>
-            <img src="https://assets.codepen.io/285131/almeria-avatar.jpeg" />
+            <img src="https://cdn3d.iconscout.com/3d/premium/thumb/tezor-5655812-4713525.png" />
           </span>
         </button>
         <div className="app-header-actions-buttons">
           <button className="icon-button large">
             <i className="ph-magnifying-glass"></i>
           </button>
-          {activeAccount ? <span>{activeAccount}</span> : <button className="icon-button large" onClick={handleWallet}>
+          <button className="icon-button large"  id= {activeAccount?"enable":""} onClick={activeAccount?null:handleWallet}>
             <i className="ph-wallet"></i>
-          </button>}
+          </button>
           
         </div>
       </div>
