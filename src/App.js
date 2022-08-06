@@ -1,42 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import Navigation from './components/Navigation';
+import Landing from './components/Landing';
+import Service from './components/Service';
+import Trend from './components/Trend';
+import Steps from './components/Steps';
 
 function App() {
   return (
     <div className="app">
     <header className="app-header">
-      <div className="app-header-logo">
-        <div className="logo">
-          <span className="logo-icon">
-            <img src="https://images.unsplash.com/photo-1639603683079-7398c604497a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=100" />
-          </span>
-          <h1 className="logo-title">
-            <span>nfTez</span>
-            <span></span>
-          </h1>
-        </div>
-      </div>
+      <Header />
       <div className="app-header-navigation">
-        <div className="tabs">
-          <a href="#">
-            Overview
-          </a>
-          <a href="#" className="active">
-            Payments
-          </a>
-          <a href="#">
-            Cards
-          </a>
-          <a href="#">
-            Account
-          </a>
-          <a href="#">
-            System
-          </a>
-          <a href="#">
-            Business
-          </a>
-        </div>
       </div>
       <div className="app-header-actions">
         <button className="user-profile">
@@ -58,204 +33,17 @@ function App() {
         <button className="icon-button large">
           <i className="ph-list"></i>
         </button>
-      </div>
-  
+      </div>  
     </header>
     <div className="app-body">
-      <div className="app-body-navigation">
-        <nav className="navigation">
-          <a href="#">
-            <i className="ph-browsers"></i>
-            <span>Dashboard</span>
-          </a>
-          <a href="#">
-            <i className="ph-check-square"></i>
-            <span>Scheduled</span>
-          </a>
-          <a href="#">
-            <i className="ph-swap"></i>
-            <span>Transfers</span>
-          </a>
-          <a href="#">
-            <i className="ph-file-text"></i>
-            <span>Templates</span>
-          </a>
-          <a href="#">
-            <i className="ph-globe"></i>
-            <span>SWIFT</span>
-          </a>
-          <a href="#">
-            <i className="ph-clipboard-text"></i>
-            <span>Exchange</span>
-          </a>
-        </nav>
-        <footer className="footer">
-          <h1>Almeria<small>©</small></h1>
-          <div>
-            Almeria ©<br />
-            All Rights Reserved 2021
-          </div>
-        </footer>
-      </div>
+      <Navigation />
       <div className="app-body-main-content">
-        <section className="service-section">
-          <h2>Service</h2>
-          <div className="service-section-header">
-            <div className="search-field">
-              <i className="ph-magnifying-glass"></i>
-              <input type="text" placeholder="Account number" />
-            </div>
-            <div className="dropdown-field">
-              <select>
-                <option>Home</option>
-                <option>Work</option>
-              </select>
-              <i className="ph-caret-down"></i>
-            </div>
-            <button className="flat-button">
-              Search
-            </button>
-          </div>
-          <div className="mobile-only">
-            <button className="flat-button">
-              Toggle search
-            </button>
-          </div>
-          <div className="tiles">
-            <article className="tile">
-              <div className="tile-header">
-                <i className="ph-lightning-light"></i>
-                <h3>
-                  <span>Electricity</span>
-                  <span>UrkEnergo LTD.</span>
-                </h3>
-              </div>
-              <a href="#">
-                <span>Go to service</span>
-                <span className="icon-button">
-                  <i className="ph-caret-right-bold"></i>
-                </span>
-              </a>
-            </article>
-            <article className="tile">
-              <div className="tile-header">
-                <i className="ph-fire-simple-light"></i>
-                <h3>
-                  <span>Heating Gas</span>
-                  <span>Gazprom UA</span>
-                </h3>
-              </div>
-              <a href="#">
-                <span>Go to service</span>
-                <span className="icon-button">
-                  <i className="ph-caret-right-bold"></i>
-                </span>
-              </a>
-            </article>
-            <article className="tile">
-              <div className="tile-header">
-                <i className="ph-file-light"></i>
-                <h3>
-                  <span>Tax online</span>
-                  <span>Kharkov 62 str.</span>
-                </h3>
-              </div>
-              <a href="#">
-                <span>Go to service</span>
-                <span className="icon-button">
-                  <i className="ph-caret-right-bold"></i>
-                </span>
-              </a>
-            </article>
-          </div>
-          <div className="service-section-footer">
-            <p>Services are paid according to the current state of the currency and tariff.</p>
-          </div>
-        </section>
-        <section className="transfer-section">
-          <div className="transfer-section-header">
-            <h2>Latest transfers</h2>
-            <div className="filter-options">
-              <p>Filter selected: more than 100 $</p>
-              <button className="icon-button">
-                <i className="ph-funnel"></i>
-              </button>
-              <button className="icon-button">
-                <i className="ph-plus"></i>
-              </button>
-            </div>
-          </div>
-          <div className="transfers">
-            <div className="transfer">
-              <div className="transfer-logo">
-                <img src="https://assets.codepen.io/285131/apple.svg" />
-              </div>
-              <dl className="transfer-details">
-                <div>
-                  <dt>Apple Inc.</dt>
-                  <dd>Apple ID Payment</dd>
-                </div>
-                <div>
-                  <dt>4012</dt>
-                  <dd>Last four digits</dd>
-                </div>
-                <div>
-                  <dt>28 Oct. 21</dt>
-                  <dd>Date payment</dd>
-                </div>
-              </dl>
-              <div className="transfer-number">
-                - $ 550
-              </div>
-            </div>
-            <div className="transfer">
-              <div className="transfer-logo">
-                <img src="https://assets.codepen.io/285131/pinterest.svg" />
-              </div>
-              <dl className="transfer-details">
-                <div>
-                  <dt>Pinterest</dt>
-                  <dd>2 year subscription</dd>
-                </div>
-                <div>
-                  <dt>5214</dt>
-                  <dd>Last four digits</dd>
-                </div>
-                <div>
-                  <dt>26 Oct. 21</dt>
-                  <dd>Date payment</dd>
-                </div>
-              </dl>
-              <div className="transfer-number">
-                - $ 120
-              </div>
-            </div>
-            <div className="transfer">
-              <div className="transfer-logo">
-                <img src="https://assets.codepen.io/285131/warner-bros.svg" />
-              </div>
-              <dl className="transfer-details">
-                <div>
-                  <dt>Warner Bros.</dt>
-                  <dd>Cinema</dd>
-                </div>
-                <div>
-                  <dt>2228</dt>
-                  <dd>Last four digits</dd>
-                </div>
-                <div>
-                  <dt>22 Oct. 21</dt>
-                  <dd>Date payment</dd>
-                </div>
-              </dl>
-              <div className="transfer-number">
-                - $ 70
-              </div>
-            </div>
-          </div>
-        </section>
+        <Landing /> 
+        {/* <Steps /> */}
+        <Service />
+        <Trend />
       </div>
-      <div className="app-body-sidebar">
+      {/* <div className="app-body-sidebar">
         <section className="payment-section">
           <h2>New Payment</h2>
           <div className="payment-section-header">
@@ -351,7 +139,7 @@ function App() {
             </button>
           </div>
         </section>
-      </div>
+      </div> */}
     </div>
   </div>
   );

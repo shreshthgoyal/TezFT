@@ -118,13 +118,26 @@ a {
   }
 }
 
+.landing-img {
+ float : right;
+  width : 30%;
+}
+
+.landing-section {
+  clear : left;
+}
+
+.landing-section > h1 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
 .app-body {
   height: 100%;
   display: grid;
-  grid-template-columns: minmax(-webkit-min-content, 175px) minmax(-webkit-max-content, 1fr) minmax(-webkit-min-content, 400px);
-  grid-template-columns: minmax(min-content, 175px) minmax(max-content, 1fr) minmax(min-content, 400px);
-  -moz-column-gap: 4rem;
-       column-gap: 4rem;
+  grid-template-columns: minmax(min-content, 175px) minmax(max-content, 4000px) minmax(min-content, 0px);
+  -moz-column-gap: 0rem;
+       column-gap: 0rem;
   padding-top: 2.5rem;
 }
 @media (max-width: 1200px) {
@@ -406,6 +419,10 @@ a {
 .tile-header h3 span:last-child {
   font-size: 0.825em;
   font-weight: 200;
+}
+
+.service-section {
+  padding-top: 8rem;
 }
 
 .service-section > h2 {
