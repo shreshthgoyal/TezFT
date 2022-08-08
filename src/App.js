@@ -5,6 +5,7 @@ import Landing from './components/Landing';
 import Service from './components/Service';
 import Trend from './components/Trend';
 // import Steps from './components/Steps';
+import Profile from './components/Profile';
 import { connectWallet, getAccount } from './utils/wallet';
 import { useEffect, useState } from 'react';
 
@@ -35,8 +36,7 @@ function App() {
     <div className="app">
     <header className="app-header">
       <Header />
-      <div className="app-header-navigation">
-      </div>
+      <Navigation />
       <div className="app-header-actions">
         <button className="user-profile">
           <span>{activeAccount ? truncate(activeAccount)  : "Connect to Wallet"}</span>
@@ -61,7 +61,6 @@ function App() {
       </div>  
     </header>
     <div className="app-body">
-      <Navigation />
       <div className="app-body-main-content">
         <Landing /> 
         {/* <Steps /> */}

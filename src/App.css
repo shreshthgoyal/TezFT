@@ -29,6 +29,7 @@ body {
   color: var(--c-text-primary);
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 *,
@@ -72,10 +73,9 @@ a {
 
 .app-header {
   display: grid;
-  grid-template-columns: minmax(-webkit-min-content, 175px) minmax(-webkit-max-content, 1fr) minmax(-webkit-max-content, 400px);
-  grid-template-columns: minmax(min-content, 175px) minmax(max-content, 1fr) minmax(max-content, 400px);
-  -moz-column-gap: 4rem;
-       column-gap: 4rem;
+  grid-template-columns: minmax(min-content, 120px) minmax(max-content, 1fr) minmax(max-content, 400px);
+  -moz-column-gap: 10rem;
+       column-gap: 10rem;
   align-items: flex-end;
 }
 @media (max-width: 1200px) {
@@ -139,11 +139,11 @@ a {
 .app-body {
   height: 100%;
   display: grid;
-  grid-template-columns: minmax(min-content, 175px) minmax(max-content, 4000px) minmax(min-content, 0px);
   -moz-column-gap: 0rem;
        column-gap: 0rem;
   padding-top: 2.5rem;
 }
+
 @media (max-width: 1200px) {
   .app-body {
     grid-template-columns: 1fr;
@@ -227,7 +227,6 @@ a {
 }
 .navigation a {
   display: flex;
-  align-items: center;
   text-decoration: none;
   transition: 0.25s ease;
 }
@@ -260,6 +259,7 @@ a {
   border-top: 2px solid transparent;
   display: inline-flex;
   transition: 0.25s ease;
+  margin-right: 20px;
 }
 .tabs a.active, .tabs a:hover, .tabs a:focus {
   color: var(--c-text-primary);
