@@ -2,7 +2,8 @@ import { BeaconWallet } from "@taquito/beacon-wallet";
 
 export const wallet = new BeaconWallet({
     name: "nfTez",
-    preferredNetwork: "jakartanet"
+    preferredNetwork: "jakartanet",
+    disableDefaultEvents: true,
 });
 
 export const connectWallet = async () => {

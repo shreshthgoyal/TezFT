@@ -13,9 +13,11 @@ function truncate(str){
   return str.slice(0, 3) + '...' + str.slice(str.length-3, str.length) ;
 };
 
+
 function App() {
   const [activeAccount, setActiveAccount] = useState()
   let address;
+
   const handleWallet = async () => {
     console.log("click");
     await connectWallet();
@@ -39,7 +41,9 @@ function App() {
       <Navigation />
       <div className="app-header-actions">
         <button className="user-profile">
-          <span>{activeAccount ? truncate(activeAccount)  : "Connect to Wallet"}</span>
+          <span>{activeAccount ? <div class="account-address">{truncate(activeAccount)}  <div class="innerText">
+        {activeAccount}
+       </div> </div>  : "Connect to Wallet"}</span>
           <span>
             <img src="https://cdn3d.iconscout.com/3d/premium/thumb/tezor-5655812-4713525.png" />
           </span>
@@ -48,7 +52,7 @@ function App() {
           <button className="icon-button large">
             <i className="ph-magnifying-glass"></i>
           </button>
-          <button className="icon-button large"  id= {activeAccount?"enable":""} onClick={activeAccount?null:handleWallet}>
+          <button className="icon-button large"  id= {activeAccount?"enable":""} onClick={handleWallet}>
             <i className="ph-wallet"></i>
           </button>
           
