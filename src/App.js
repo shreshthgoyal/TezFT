@@ -19,7 +19,6 @@ function App() {
   let address;
 
   const handleWallet = async () => {
-    console.log("click");
     await connectWallet();
     const activeAccount = await getAccount();
     setActiveAccount(activeAccount);

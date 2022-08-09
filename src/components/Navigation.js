@@ -1,7 +1,7 @@
 function Navigation() {
     return (
-      <div class="app-header-navigation">
-			<div class="tabs">
+      <div className="app-header-navigation">
+			<div className="tabs">
 				<a href="#">
 					Overview
 				</a>

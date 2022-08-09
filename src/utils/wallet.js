@@ -3,13 +3,13 @@ import { BeaconWallet } from "@taquito/beacon-wallet";
 export const wallet = new BeaconWallet({
     name: "nfTez",
     preferredNetwork: "jakartanet",
-    disableDefaultEvents: true,
 });
 
 export const connectWallet = async () => {
     await wallet.requestPermissions({
         network: {
-            type: "jakartanet"
+            type: "jakartanet",
+            disableDefaultEvents: true,
         }
     });
 }
