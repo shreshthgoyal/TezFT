@@ -8,6 +8,7 @@ import Trend from './components/Trend';
 import Profile from './components/Profile';
 import { connectWallet, getAccount } from './utils/wallet';
 import { useEffect, useState } from 'react';
+import { tezos } from './utils/tezos';
 
 function truncate(str){
   return str.slice(0, 3) + '...' + str.slice(str.length-3, str.length) ;
@@ -22,6 +23,20 @@ function App() {
     await connectWallet();
     const activeAccount = await getAccount();
     setActiveAccount(activeAccount);
+  }
+
+  const fetchContract = async () => {
+    try{
+      const contract = await tezos.wallet.at("KT1DVEEq1Wr2RZv68TEQwmnfmv7LTEP1VRx3");
+      // let amount = 1000;
+      // const op = await contract.methods.mint(amount, "ipfs://bafyreibwl5hhjgrat5l7cmjlv6ppwghm6ijygpz2xor2r6incfcxnl7y3e/metadata.json").send()
+      // await op.confirmation();
+      // console.log(op);
+      console.log(contract);
+    }
+    catch(error){
+
+    }
   }
 
  useEffect( () => {
@@ -49,7 +64,7 @@ function App() {
         </button>
         <div className="app-header-actions-buttons">
           <button className="icon-button large">
-            <i className="ph-magnifying-glass"></i>
+            <i className="ph-magnifying-glass" onClick={fetchContract}></i>
           </button>
           <button className="icon-button large"  id= {activeAccount?"enable":""} onClick={handleWallet}>
             <i className="ph-wallet"></i>

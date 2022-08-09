@@ -9,7 +9,7 @@ export const connectWallet = async () => {
     await wallet.requestPermissions({
         network: {
             type: "jakartanet",
-            disableDefaultEvents: true,
+
         }
     });
 }
