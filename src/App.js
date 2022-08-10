@@ -5,19 +5,29 @@ import Landing from './components/Landing';
 import Service from './components/Service';
 import Trend from './components/Trend';
 // import Steps from './components/Steps';
+import { useFilePicker } from "use-file-picker";
 import Profile from './components/Profile';
 import { connectWallet, getAccount } from './utils/wallet';
 import { useEffect, useState } from 'react';
-import { tezos } from './utils/tezos';
+// import { tezos } from './utils/tezos';
+import {mintNFT} from './utils/actions';
+
 
 function truncate(str){
   return str.slice(0, 3) + '...' + str.slice(str.length-3, str.length) ;
 };
 
 
+
 function App() {
   const [activeAccount, setActiveAccount] = useState()
+  const [openFileSelector, { filesContent }] = useFilePicker({
+		accept: [".png", ".jpg", ".jpeg", ".gif"],
+		multiple: false,
+		readAs: "ArrayBuffer",
+	});
   let address;
+  
 
   const handleWallet = async () => {
     await connectWallet();
@@ -25,19 +35,6 @@ function App() {
     setActiveAccount(activeAccount);
   }
 
-  const fetchContract = async () => {
-    try{
-      const contract = await tezos.wallet.at("KT1DVEEq1Wr2RZv68TEQwmnfmv7LTEP1VRx3");
-      // let amount = 1000;
-      // const op = await contract.methods.mint(amount, "ipfs://bafyreibwl5hhjgrat5l7cmjlv6ppwghm6ijygpz2xor2r6incfcxnl7y3e/metadata.json").send()
-      // await op.confirmation();
-      // console.log(op);
-      console.log(contract);
-    }
-    catch(error){
-
-    }
-  }
 
  useEffect( () => {
   async function fetchAccount() {
@@ -55,7 +52,7 @@ function App() {
       <Navigation />
       <div className="app-header-actions">
         <button className="user-profile">
-          <span>{activeAccount ? <div class="account-address">{truncate(activeAccount)}  <div class="innerText">
+          <span>{activeAccount ? <div className="account-address">{truncate(activeAccount)}  <div className="innerText">
         {activeAccount}
        </div> </div>  : "Connect to Wallet"}</span>
           <span>
@@ -64,8 +61,14 @@ function App() {
         </button>
         <div className="app-header-actions-buttons">
           <button className="icon-button large">
-            <i className="ph-magnifying-glass" onClick={fetchContract}></i>
+            <i className="ph-magnifying-glass" onClick={mintNFT(activeAccount, 1000, "ipfs://bafyreibwl5hhjgrat5l7cmjlv6ppwghm6ijygpz2xor2r6incfcxnl7y3e/metadata.json")}></i>
           </button>
+          {/* <button className="icon-button large">
+            <i className="ph-wallet" onClick={(event) => {
+							openFileSelector();
+							event.preventDefault();
+						}}></i>
+          </button> */}
           <button className="icon-button large"  id= {activeAccount?"enable":""} onClick={handleWallet}>
             <i className="ph-wallet"></i>
           </button>

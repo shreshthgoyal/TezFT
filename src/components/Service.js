@@ -1,8 +1,10 @@
+import Explore from './Explore'
+
 function Service() {
     return (
         <section className="service-section">
-        <h2>Service</h2>
-        <div className="service-section-header">
+        <h2>Explore NFTs</h2>
+        {/* <div className="service-section-header">
           <div className="search-field">
             <i className="ph-magnifying-glass"></i>
             <input type="text" placeholder="Account number" />
@@ -22,7 +24,7 @@ function Service() {
           <button className="flat-button">
             Toggle search
           </button>
-        </div>
+        </div> */}
         <div className="tiles">
           <article className="tile">
             <div className="tile-header">
@@ -70,9 +72,13 @@ function Service() {
             </a>
           </article>
         </div>
-        <div className="service-section-footer">
-          <p>Services are paid according to the current state of the currency and tariff.</p>
-        </div>
+        <br />
+        <a href={Explore}>
+        <button className="large">
+            Explore NFTs here &nbsp;
+          <i className="ph-arrow-circle-right"></i>
+        </button>
+        </a>
       </section>
     )
 }
