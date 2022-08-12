@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <h1 align="center">nfTez</h1>
+  <p align="center">
+   Your one-stop NFT Marketplace for Tezos.
+   <br />
+  </p>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+<div id="about-the-project" />
 
-In the project directory, you can run:
+<!-- ABOUT THE PROJECT -->
+# Team - Pilluzym
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- #### Team Members
+    - [Rishabh Kumar](https://github.com/rish78)
+    - [Shreshth Goyal ](https://github.com/shreshthgoyal)
+    - [Kshitij Ayush](https://github.com/kshitij-404)
+    - [Mounica Sruthi K](https://github.com/mounicasruthi) 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[contributors-shield]: https://img.shields.io/github/contributors/shreshthgoyal/QF.svg?style=for-the-badge
+[contributors-url]: https://github.com/shreshthgoyal/QF
+# What is nfTez?
 
-### `npm test`
+nfTez is a platform to buy and sell NFTs on the Tezos ecosystem. It has the feature of swapping NFTs as well. Users can exchange their NFTs to obtain liquid tokens via this platform. In order to lower the cost of buying and selling NFTs in Tez, the market need a platform that allows for fractional purchases and sales. This is where nfTez steps in. On this platform, NFT collectors can list their NFTs for sale. who want to invest in NFTs as arbitrageurs. This platform enables anyone without sufficient funds to purchase an NFT to own a portion of an NFT.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Inspiration
 
-### `npm run build`
+The popularity of digital art is rising every day, and NFTs (Non-Fungible Tokens) have emerged as a modern trend. As a result, we believed the market required a platform where NFTs could be easily bought, sold, and swapped, particularly on the Tezos chain. To integrate all of them on a single platform, we developed nfTez, an NFT Marketplace. A platform like this does not exist on the Tezos ecosystem and this platform would bring make it more feasible to trade NFTs on the Tezos ecosystem.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<div id="technologies-used" />
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Technologies, Libraries and Packages Used
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Smart-Py (For Smart contract)
+* ReactJS (For client side application)
+* Taquito (Integrating Smart contracts)
 
-### `npm run eject`
+<div id="local-setup" />
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Running Instructions
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+> **Pre-Requisites**
+> React
+> Temple 
+1. Fork this repository.
+2. Clone the repository
+   ```sh
+    git clone https://github.com/shreshthgoyal/nfTez.git
+    ```
+3. To start your application run the following command in your terminal.
+   ```sh
+   npm start
+   ```
+   
+4. Click on the wallet icon on the top right and connect your wallet.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<!-- GETTING STARTED -->
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Contract Address
+> KT1CvQe75Dbjza4YtnrYcVb3fvXUaZBuzFGa
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Deployed on Jakartnet
