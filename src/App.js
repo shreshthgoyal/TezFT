@@ -5,12 +5,14 @@ import Landing from './components/Landing';
 import Service from './components/Service';
 import Trend from './components/Trend';
 // import Steps from './components/Steps';
-import { useFilePicker } from "use-file-picker";
+
 import Profile from './components/Profile';
 import { connectWallet, getAccount } from './utils/wallet';
 import { useEffect, useState } from 'react';
 // import { tezos } from './utils/tezos';
 import {mintNFT} from './utils/actions';
+import axios from 'axios';
+import config from './utils/config';
 
 
 function truncate(str){
@@ -21,12 +23,30 @@ function truncate(str){
 
 function App() {
   const [activeAccount, setActiveAccount] = useState()
-  const [openFileSelector, { filesContent }] = useFilePicker({
-		accept: [".png", ".jpg", ".jpeg", ".gif"],
-		multiple: false,
-		readAs: "ArrayBuffer",
-	});
+  // const [openFileSelector, { filesContent }] = useFilePicker({
+	// 	accept: [".png", ".jpg", ".jpeg", ".gif"],
+	// 	multiple: false,
+	// 	readAs: "ArrayBuffer",
+	// });
   let address;
+
+  const fetchContract = async () => {
+    console.log("here")
+    try{
+      const res = await axios.get(
+				`https://api.jakartanet.tzkt.io/v1/contracts/${config.contractAddress}/bigmaps/data/keys`
+			);
+			const response1 = await axios.get(
+				`https://api.jakartanet.tzkt.io/v1/contracts/${config.tokenAddress}/bigmaps/token_metadata/keys`
+			);
+      console.log(res, response1);
+			const d1 = res.data;
+			const d2 = response1.data;
+      console.log(d1, d2);
+    } catch (e) {
+			console.log(e);
+		}
+  }
   
 
   const handleWallet = async () => {
@@ -61,7 +81,7 @@ function App() {
         </button>
         <div className="app-header-actions-buttons">
           <button className="icon-button large">
-            <i className="ph-magnifying-glass" onClick={mintNFT(activeAccount, 1000, "ipfs://bafyreibwl5hhjgrat5l7cmjlv6ppwghm6ijygpz2xor2r6incfcxnl7y3e/metadata.json")}></i>
+            <i className="ph-magnifying-glass" onClick={fetchContract}></i>
           </button>
           {/* <button className="icon-button large">
             <i className="ph-wallet" onClick={(event) => {
